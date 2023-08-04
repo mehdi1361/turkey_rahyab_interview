@@ -6,16 +6,18 @@ from rest_framework.response import Response
 from rest_framework import status
 from django.contrib import auth
 from user.models import UserAccount
-from api.serializers import UserSerializer
+from post.models import Announcement
+from api.serializers import UserSerializer, AnnouncementSerializer
 from .pagination import CustomPaginations
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 class UserView(mixins.CreateModelMixin,
                    mixins.UpdateModelMixin,
-                   GenericViewSet):
+                   viewsets.GenericViewSet):
     queryset = UserAccount.objects.all()
     serializer_class = UserSerializer
-    permission_classes = [IsAuthenticated, ]
+    permission_classes = [AllowAny, ]
     pagination_class = CustomPaginations
 
     @action(methods=["post"], detail=False, permission_classes=[AllowAny])
@@ -33,7 +35,63 @@ class UserView(mixins.CreateModelMixin,
 
         return Response({"message": "user was not found"}, status=status.HTTP_404_NOT_FOUND)
 
-    @action(methods=["get"], detail=True, permission_classes=[IsAuthenticated])
+    @action(methods=["get"], detail=False, permission_classes=[IsAuthenticated])
     def profile(self, request):
         serializer = self.serializer_class(self.request.user)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+class AnnouncementView(
+                   mixins.ListModelMixin,
+                   mixins.RetrieveModelMixin,
+                   mixins.DestroyModelMixin,
+                   mixins.UpdateModelMixin,
+                   viewsets.GenericViewSet
+):
+    queryset = Announcement.objects.all()
+    serializer_class = AnnouncementSerializer
+    permission_classes = [IsAuthenticated, ]
+    pagination_class = CustomPaginations
+    filter_backends = [DjangoFilterBackend]
+    filterset_fields = ['title', 'content']
+
+    def get_permissions(self):
+        if self.request.method == 'GET':
+            return [AllowAny()]
+        else:
+            return super().get_permissions()
+
+    def retrieve(self, request, pk=None):
+        announcement = Announcement.objects.filter(pk=pk).first()
+        announcement.views_count += 1
+        announcement.save()
+        serializer = self.serializer_class(announcement)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def create(self, request, *args, **kwargs):
+        picture = request.FILES.get("picture")
+        announcement = Announcement.objects.create(
+            title=request.data["title"],
+            content=request.data["title"],
+            owner=request.user,
+            picture=picture
+        )
+        serializer = self.serializer_class(announcement)
+
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+    @action(methods=["post"], detail=True, permission_classes=[IsAuthenticated])
+    def accept(self, request,pk=None):
+        announcement = Announcement.objects.filter(pk=pk).first()
+        announcement.accept = True
+        announcement.save()
+        serializer = self.serializer_class(announcement)
+
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    @action(methods=["get"], detail=False, permission_classes=[IsAuthenticated])
+    def my_announcement(self, request,pk=None):
+        announcements = Announcement.objects.filter(owner=request.user)
+        serializer = self.serializer_class(announcements, many=True)
+
         return Response(serializer.data, status=status.HTTP_200_OK)

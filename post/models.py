@@ -15,5 +15,8 @@ class Announcement(Base):
 
     small_picture = ImageSpecField(source='picture', processors=[ResizeToFill(80, 80)], format="PNG",
                                       options={'quality': 80})
+    accept = models.BooleanField(default=False)
+
+    views_count = models.PositiveIntegerField(default=0)
     class Meta:
         db_table = "announcement"

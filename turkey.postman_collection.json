@@ -1,0 +1,1022 @@
+{
+	"info": {
+		"_postman_id": "e0da72ef-0a82-42ec-8424-146a869e9949",
+		"name": "turkey",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21563517",
+		"_collection_link": "https://backend-pro.postman.co/workspace/Team-Workspace~36040342-317a-4546-8bbd-d842dd73fabb/collection/21563517-e0da72ef-0a82-42ec-8424-146a869e9949?action=share&creator=21563517&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mhd.mosavi@outlook.com\", \n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.1:8000/api/user/",
+					"host": [
+						"127",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "ok response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mhd.mosavi@outlook.com\", \n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.1:8000/api/user/",
+							"host": [
+								"127",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:34:34 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "87"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": \"mhd.mosavi@outlook.com\",\n    \"image_link\": null,\n    \"first_name\": null,\n    \"last_name\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"mhd.mosavi@gmail.com\", \n    \"password\": \"123456\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.1:8000/api/user/login/",
+					"host": [
+						"127",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"mhd.mosavi@gmail.com\", \n    \"password\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.1:8000/api/user/login/",
+							"host": [
+								"127",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:37:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "240"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4\"\n}"
+				}
+			]
+		},
+		{
+			"name": "profile",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/user/profile/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"user",
+						"profile",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "profile",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/user/profile/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"user",
+								"profile",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:39:21 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"email\": \"mhd.mosavi@gmail.com\",\n    \"image_link\": null,\n    \"first_name\": null,\n    \"last_name\": null\n}"
+				}
+			]
+		},
+		{
+			"name": "list announcement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "list announcement",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:41:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, POST, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "609"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"current\": 1,\n    \"page_count\": 1,\n    \"page_size\": 10,\n    \"count\": 5,\n    \"next\": null,\n    \"previous\": null,\n    \"results\": [\n        {\n            \"id\": 1,\n            \"title\": \"test1\",\n            \"content\": \"test description\",\n            \"accept\": true,\n            \"views_count\": 0\n        },\n        {\n            \"id\": 3,\n            \"title\": \"test1\",\n            \"content\": \"test1\",\n            \"owner\": \"mhd.mosavi@gmail.com\",\n            \"accept\": false,\n            \"views_count\": 3\n        },\n        {\n            \"id\": 4,\n            \"title\": \"test1\",\n            \"content\": \"test1\",\n            \"owner\": \"mhd.mosavi@gmail.com\",\n            \"accept\": false,\n            \"views_count\": 0\n        },\n        {\n            \"id\": 5,\n            \"title\": \"test1222\",\n            \"content\": \"test1222\",\n            \"owner\": \"mhd.mosavi@gmail.com\",\n            \"accept\": false,\n            \"views_count\": 0\n        },\n        {\n            \"id\": 6,\n            \"title\": \"test1222\",\n            \"content\": \"test1222\",\n            \"owner\": \"mhd.mosavi@gmail.com\",\n            \"accept\": false,\n            \"views_count\": 0\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "get announcement",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/3/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						"3",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "get announcement",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/3/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								"3",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:43:55 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "104"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"title\": \"test1\",\n    \"content\": \"test1\",\n    \"owner\": \"mhd.mosavi@gmail.com\",\n    \"accept\": false,\n    \"views_count\": 4\n}"
+				}
+			]
+		},
+		{
+			"name": "accept",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/3/accept/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						"3",
+						"accept",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "accept",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:51:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "POST, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "103"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 3,\n    \"title\": \"test1\",\n    \"content\": \"test1\",\n    \"owner\": \"mhd.mosavi@gmail.com\",\n    \"accept\": true,\n    \"views_count\": 5\n}"
+				}
+			]
+		},
+		{
+			"name": "delete announcement",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/6/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						"6",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete announcement",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/6/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								"6",
+								""
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 13:54:42 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "0"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "my announcement",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/my_announcement/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						"my_announcement",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "my announcement",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/my_announcement/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								"my_announcement",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 14:00:43 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "321"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"id\": 3,\n        \"title\": \"test1\",\n        \"content\": \"test1\",\n        \"owner\": \"mhd.mosavi@gmail.com\",\n        \"accept\": true,\n        \"views_count\": 5\n    },\n    {\n        \"id\": 4,\n        \"title\": \"test1\",\n        \"content\": \"test1\",\n        \"owner\": \"mhd.mosavi@gmail.com\",\n        \"accept\": false,\n        \"views_count\": 0\n    },\n    {\n        \"id\": 5,\n        \"title\": \"test1222\",\n        \"content\": \"test1222\",\n        \"owner\": \"mhd.mosavi@gmail.com\",\n        \"accept\": false,\n        \"views_count\": 0\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "edit announcement",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"ddsdsdsdsd\", \n    \"content\": \"hello world\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/1/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						"1",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "edit announcement",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"ddsdsdsdsd\", \n    \"content\": \"hello world\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "127.0.0.1:8000/api/announcement/1/",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"announcement",
+								"1",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 04 Aug 2023 14:10:15 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.10.12"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "GET, PUT, PATCH, DELETE, HEAD, OPTIONS"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Length",
+							"value": "83"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 1,\n    \"title\": \"ddsdsdsdsd\",\n    \"content\": \"hello world\",\n    \"accept\": true,\n    \"views_count\": 1\n}"
+				}
+			]
+		},
+		{
+			"name": "create announcement with picture",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "jwt eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjkyMDIwMjM1LCJpYXQiOjE2OTExNTYyMzUsImp0aSI6IjQ2NTYzM2RjZDE2MDQxNDU5ZTc0YTRlMjQ0YTVmZDI0IiwidXNlcl9pZCI6Mn0.ZOYwcg_g1UsvVkOG-l1K20B2n2Tn34yKsTzongivl-4",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "title",
+							"value": "sasasas",
+							"type": "text"
+						},
+						{
+							"key": "content",
+							"value": "asasasa",
+							"type": "text"
+						},
+						{
+							"key": "picture",
+							"type": "file",
+							"src": "/home/mehdi/Pictures/Screenshots/Screenshot from 2023-06-18 23-03-34.png"
+						},
+						{
+							"key": "",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/api/announcement/",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"announcement",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

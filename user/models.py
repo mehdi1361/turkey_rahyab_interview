@@ -3,6 +3,7 @@ from django.db import models
 from datetime import datetime
 from django.utils.html import mark_safe
 from django.utils.translation import gettext_lazy as _
+from django.contrib.auth.models import UserManager
 
 
 class UserAccount(AbstractBaseUser, PermissionsMixin):
@@ -29,6 +30,7 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
         null=True
     )
 
+    objects = UserManager()
 
     USERNAME_FIELD = "email"
 
@@ -40,11 +42,6 @@ class UserAccount(AbstractBaseUser, PermissionsMixin):
 
     def has_module_perms(self, app_label):
         return True
-
-    def save(self, *args, **kwargs):
-        if not self.type or self.type==None:
-            self.type = Types.SITE_ADMIN
-        return super().save(*args, **kwargs)
 
     def img_preview(self):
         try:

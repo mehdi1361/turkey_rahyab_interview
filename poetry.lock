@@ -173,6 +173,19 @@ python-versions = "*"
 tests = ["asttokens", "pytest", "littleutils", "rich"]
 
 [[package]]
+name = "ipdb"
+version = "0.13.13"
+description = "IPython-enabled pdb"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[package.dependencies]
+decorator = {version = "*", markers = "python_version > \"3.6\" and python_version < \"3.11\" or python_version >= \"3.11\""}
+ipython = {version = ">=7.31.1", markers = "python_version > \"3.6\" and python_version < \"3.11\" or python_version >= \"3.11\""}
+tomli = {version = "*", markers = "python_version > \"3.6\" and python_version < \"3.11\""}
+
+[[package]]
 name = "ipython"
 version = "8.14.0"
 description = "IPython: Productive Interactive Computing"
@@ -398,6 +411,14 @@ pure-eval = "*"
 tests = ["pytest", "typeguard", "pygments", "littleutils", "cython"]
 
 [[package]]
+name = "tomli"
+version = "2.0.1"
+description = "A lil' TOML parser"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[[package]]
 name = "traitlets"
 version = "5.9.0"
 description = "Traitlets Python configuration system"
@@ -436,7 +457,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.10"
-content-hash = "06708790bd60265803ae445e08970ed864fa359cc82ec15b2c5baca578e8d0f0"
+content-hash = "d37656366471918cf28175b1f0cdf2204162b478df1b85c2385fc41eb7171e54"
 
 [metadata.files]
 appnope = []
@@ -453,6 +474,7 @@ django-rest-captcha = []
 djangorestframework = []
 djangorestframework-simplejwt = []
 executing = []
+ipdb = []
 ipython = []
 jedi = []
 markdown = []
@@ -471,6 +493,7 @@ pytz = []
 six = []
 sqlparse = []
 stack-data = []
+tomli = []
 traitlets = []
 typing-extensions = []
 tzdata = []
